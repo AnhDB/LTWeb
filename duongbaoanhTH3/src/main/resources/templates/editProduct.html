@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+	<meta charset="ISO-8859-1">
+	<title>Product Maintenance</title>
+
+</head>
+
+<body>
+	<h1>Product</h1>
+	<form th:action="@{/products/editProduct/{code}(code=${product.code})}" th:object="${product}" method="post">
+		<table cellspacing="10" border="0">
+			<tr>
+				<td align="right">Product code:
+				<td>
+				<td><input type="text" th:field="*{code}"  readonly>
+				<td>
+			</tr>
+			<tr>
+				<td align="right">Product description:
+				<td>
+				<td><input type="text" th:field="*{description}" >
+				<td>
+			</tr>
+			<tr>
+				<td align="right">Product price:
+				<td>
+				<td><input type="text" th:field="*{price}" >
+				<td>
+			</tr>
+		</table>
+		<button type="submit" style="margin: 10px 50px;">Update product</button>
+		<button><a th:href="@{/products}" style="text-decoration: none; color: black">View products</a></button>
+	</form>
+
+
+</body>
+
+</html>
