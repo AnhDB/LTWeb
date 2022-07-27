@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <h1>Math Form</h1>
+        <form action="cal" method="post">
+            Enter number 1: <input type="text" name="num1"/><br>
+            Enter number 2: <input type="text" name="num2"/><br>
+<!--            <select name="op">
+                <option>+</option>
+                <option>-</option>
+                <option>x</option>
+                <option>:</option>
+            </select><br>-->
+            Select operator:
+            <input type="radio" name="op" value="+" checked/>+
+            <input type="radio" name="op" value="-"/>-
+            <input type="radio" name="op" value="x"/>x
+            <input type="radio" name="op" value=":"/>:<br>
+            <input type="submit" value="Caculate"/>
+        </form>
+    </body>
+</html>
