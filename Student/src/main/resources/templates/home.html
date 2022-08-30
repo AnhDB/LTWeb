@@ -1,0 +1,38 @@
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Student</title>
+</head>
+<body>
+	<h1>Add Student</h1>
+	<form th:action="@{/infor}"  th:object="${student}"  method="post">
+		<table cellpadding="10">
+			<tr>
+				<td>ID:</td>
+				<td><input type="text" th:field="*{id}"></td>
+				<td>[[${message1}]]</td>
+			</tr>
+			<tr>
+				<td>Name:</td>
+				<td><input type="text" th:field="*{name}"></td>
+				[[${message2}]]
+			</tr>
+			<tr>
+				<td>DOB:</td>
+				<td><input th:field="*{dob}"></td>
+				[[${message3}]]
+			</tr>
+			<tr>
+				<td>Department:</td>
+				<td><select type="text" th:field="*{department}">
+						<option th:value="'CNTT'" th:text="CNTT"></option>
+						<option th:value="'DTVT'" th:text="DTVT"></option>
+						<option th:value="'MKT'" th:text="MKT"></option>
+				</select></td>
+			</tr>
+		</table>
+		<input type="submit" value="Add"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+		<input type="reset" value="Reset">
+	</form>
+</body>
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Product Manager</title>
+</head>
+<body>
+	<h1>Add Product</h1>
+	<form th:action="@{/delete/{id}(id=${product.id})}" th:object="${product}" method="post">
+		<table border="0" cellpadding="10">
+			<tr>
+				<td>ID:</td>
+				<td th:text="*{id}"></td>
+				
+			</tr>
+			<tr>
+				<td>Name:</td>
+				<td th:text="*{name}"></td>
+			<tr>
+				<td>Brand:</td>
+				<td th:text="*{brand}"></td>
+			</tr>
+			<tr>
+				<td>Made in:</td>
+				<td th:text="*{madein}"></td>
+			</tr>
+			<tr>
+				<td>Price:</td>
+				<td th:text="*{price}"></td>
+			</tr>
+		</table>
+		<br>
+		<button type="submit" name="choose" value="yes">Yes</button>
+	<button type="submit" name="choose" value="no">No</button>
+	</form>
+
+	
+	
+</body>
+</html>

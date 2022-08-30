@@ -1,0 +1,37 @@
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Student</title>
+</head>
+<body>
+	<h1>Add Student</h1>
+	<form th:action="@{/add}" method="post">
+	<table cellpadding ="10">
+	<tr>
+	<td>ID:</td>
+	<td><p  th:text="${student.id}" /></td>
+	</tr>
+<tr>
+	
+	<td>Name:</td>
+	<td><p  th:text="${student.name}" /></td>
+	
+	</tr>
+	<tr>
+	
+	<td>DOB:</td>
+	<td><p  th:text="${#dates.format(student.dob, 'dd/mm/yyyy')}" /></td>
+
+	</tr>
+	<tr>
+
+
+	<td>Department:</td>
+	<td><p  th:text="${student.department}" /></td>
+	</tr>
+	</table>
+	<button type="submit" name="chon" value="yes">Confirm</button>
+	<button type="submit" name="chon" value="no">Back</button>
+	</form>
+</body>
+</html>
