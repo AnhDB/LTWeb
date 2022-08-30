@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Book Manager</title>
+</head>
+<body>
+<h1>Search</h1>
+	<form th:action="@{/search}" th:object="${book}" method="post">
+		<label>BookCode:</label> <input type="text" th:field="*{bookcode}" /><br>
+		<br> <label>Title:</label> <input type="text" th:field="*{title}" /><br>
+		<br> <label>Author:</label> <input type="text"
+			th:field="*{author}" /><br>
+		<br> <label>Category:</label> <input type="text"
+			th:field="*{category}" /><br>
+		<br>
+		<button type="submit">Search</button>
+	</form>
+</body>
+</html>

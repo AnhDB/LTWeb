@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Book Manager</title>
+</head>
+<body>
+	<h1>Books</h1>
+	<table cellpading="10" border="1">
+		<thead>
+			<tr>
+				<th>BookCode</th>
+				<th>Title</th>
+				<th>Author</th>
+				<th>Category</th>
+			</tr>
+		</thead>
+		
+		<tbody>
+			<tr th:each="b: ${list}">
+				<td th:text="*{b.bookcode}"></td>
+				<td th:text="*{b.title}"></td>
+				<td th:text="*{b.author}"></td>
+				<td th:text="*{b.category}"></td>
+				<td><span th:if="${b.booked} == '0'"> <a
+						th:href="@{'/book/'+ ${b.bookcode}}">Book</a>
+				</span> <span th:if="${b.booked} == '1'"> Booked </span></td>
+
+			</tr>
+		</tbody>
+	</table>
+</body>
+</html>
