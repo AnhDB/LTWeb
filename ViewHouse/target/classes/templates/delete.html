@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>View House</title>
+</head>
+<body>
+<h2>Delete</h2>
+<form th:action="@{'/delete/'+${house.id}}" th:object="${house}" method="post">
+	<table cellpadding="10">
+	<tr>
+	<td>ID:</td>
+	<td th:text="*{id}"></td>
+	</tr>
+	<tr>
+	<td>Address:</td>
+	<td th:text="*{address}"></td>
+	</tr>
+	<tr>
+	<td>Area:</td>
+	<td th:text="*{area}"></td>
+	</tr>
+	<tr>
+	<td>Type:</td>
+	<td th:text="*{type}"></td>
+	</tr>
+	</table>
+	<button type="submit" value="yes" name="chon">Confirm</button>
+	<button type="submit" value="no" name="chon">Cancel</button>
+</form>
+</body>
+</html>

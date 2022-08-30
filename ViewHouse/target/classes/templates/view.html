@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>View House</title>
+</head>
+<body>
+<h1>Houses</h1>
+<form th:action="@{/view}">
+<table border="1" cellpadding="10">
+<thead>
+<tr>
+<th>id</th>
+<th>address</th>
+<th>area</th>
+<th>type</th>
+</tr>
+</thead>
+<tbody>
+<tr th:each="h:${list}">
+<td th:text="*{h.id}"></td>
+<td th:text="*{h.address}"></td>
+<td th:text="*{h.area}"></td>
+<td th:text="*{h.type}"></td>
+<td>
+<a th:href="@{'/approve/'+${h.id}}">Approve</a>
+<a th:href="@{'/delete/'+${h.id}}">Delete</a>
+</td>
+</tr>
+</tbody>
+</table>
+</form>
+
+</body>
+</html>
